@@ -16,7 +16,7 @@ class Cart extends CI_Controller {
 		//print_r($data['products']);
 	}
 	
-	function add_cart_item(){
+	public function add_cart_item(){
 		if($this->cart_model->validate_add_cart_item()==TRUE){
 			//Check if the user has Javascript enabled 
 			if($this->input->post('ajax')!='1'){
@@ -29,6 +29,17 @@ class Cart extends CI_Controller {
 			}
 		}
 	}
+	function show_cart(){
+		$this->load->view('cart/cart');
+	}
+	function update_cart(){
+		$this->cart_model->validate_update_cart();
+		redirect('cart');
+	}
+	function empty_cart(){  
+        $this->cart->destroy(); // Destroy all cart data  
+        redirect('cart'); // Refresh te page  
+    }
 }
 
 /* End of file welcome.php */

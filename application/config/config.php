@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/mycart/';
+$config['base_url']	= 'http://localhost/~pramodsudheendra/mycart/';
 
 /*
 |--------------------------------------------------------------------------
